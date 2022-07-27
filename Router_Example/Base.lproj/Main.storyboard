@@ -42,6 +42,9 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="url"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="VGz-5H-ity" id="O6h-cM-Fg6"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,6 +122,7 @@
                     </view>
                     <connections>
                         <outlet property="inputURL" destination="f7l-c5-7Q5" id="F20-O3-qyT"/>
+                        <outlet property="scrollView" destination="Uv8-g0-5ms" id="chE-5e-nN3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0u-sW-hxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
