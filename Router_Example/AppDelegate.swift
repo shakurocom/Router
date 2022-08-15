@@ -6,7 +6,7 @@
 import UIKit
 import Router_Framework
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
