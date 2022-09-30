@@ -10,6 +10,8 @@
 - [Usage](#usage)
 - [License](#license)
 
+A `Router` navigates between view controllers. `Router` has various configuration options.
+
 ## Requirements
 
 - iOS 11.0+

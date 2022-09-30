@@ -15,6 +15,7 @@
 		1795997928900E16003BBBC1 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795997428900E16003BBBC1 /* RouterProtocol.swift */; };
 		1795997D28900EDE003BBBC1 /* Shakuro.Router.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 1795997C28900EDE003BBBC1 /* Shakuro.Router.podspec */; };
 		299BBD2B5C41C38931F156CB /* Pods_Router_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B356203EDD8876021BC11B1E /* Pods_Router_Framework.framework */; };
+		6B473CB528E71DDC0040D82B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6B473CB428E71DDC0040D82B /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1795997B28900E61003BBBC1 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		1795997C28900EDE003BBBC1 /* Shakuro.Router.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Shakuro.Router.podspec; sourceTree = "<group>"; };
 		44589E6787AC5D1F9D5A707D /* Pods-Router_Framework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Router_Framework.debug.xcconfig"; path = "Target Support Files/Pods-Router_Framework/Pods-Router_Framework.debug.xcconfig"; sourceTree = "<group>"; };
+		6B473CB428E71DDC0040D82B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		79F4F8BECF98ED4C3AE7987A /* Pods-Router_Framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Router_Framework.release.xcconfig"; path = "Target Support Files/Pods-Router_Framework/Pods-Router_Framework.release.xcconfig"; sourceTree = "<group>"; };
 		B356203EDD8876021BC11B1E /* Pods_Router_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Router_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -52,6 +54,7 @@
 				1795997B28900E61003BBBC1 /* LICENSE.md */,
 				1795997A28900E61003BBBC1 /* README.md */,
 				1795997C28900EDE003BBBC1 /* Shakuro.Router.podspec */,
+				6B473CB428E71DDC0040D82B /* .swiftlint.yml */,
 				1795996628900D74003BBBC1 /* Router_Framework */,
 				1795996F28900E16003BBBC1 /* Source */,
 				1795996528900D74003BBBC1 /* Products */,
@@ -176,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B473CB528E71DDC0040D82B /* .swiftlint.yml in Resources */,
 				1795997D28900EDE003BBBC1 /* Shakuro.Router.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
