@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name             = 'Shakuro.Router'
-    s.version          = '1.0.0'
+    s.version          = '1.0.1'
     s.summary          = 'Router'
     s.homepage         = 'https://github.com/shakurocom/Router'
     s.license          = { :type => "MIT", :file => "LICENSE.md" }
