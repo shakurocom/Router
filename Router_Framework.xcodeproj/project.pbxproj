@@ -14,7 +14,6 @@
 		1795997828900E16003BBBC1 /* Router+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795997328900E16003BBBC1 /* Router+Alerts.swift */; };
 		1795997928900E16003BBBC1 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795997428900E16003BBBC1 /* RouterProtocol.swift */; };
 		1795997D28900EDE003BBBC1 /* Shakuro.Router.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 1795997C28900EDE003BBBC1 /* Shakuro.Router.podspec */; };
-		299BBD2B5C41C38931F156CB /* Pods_Router_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B356203EDD8876021BC11B1E /* Pods_Router_Framework.framework */; };
 		6B473CB528E71DDC0040D82B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6B473CB428E71DDC0040D82B /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
@@ -30,10 +29,7 @@
 		1795997A28900E61003BBBC1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1795997B28900E61003BBBC1 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		1795997C28900EDE003BBBC1 /* Shakuro.Router.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Shakuro.Router.podspec; sourceTree = "<group>"; };
-		44589E6787AC5D1F9D5A707D /* Pods-Router_Framework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Router_Framework.debug.xcconfig"; path = "Target Support Files/Pods-Router_Framework/Pods-Router_Framework.debug.xcconfig"; sourceTree = "<group>"; };
 		6B473CB428E71DDC0040D82B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		79F4F8BECF98ED4C3AE7987A /* Pods-Router_Framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Router_Framework.release.xcconfig"; path = "Target Support Files/Pods-Router_Framework/Pods-Router_Framework.release.xcconfig"; sourceTree = "<group>"; };
-		B356203EDD8876021BC11B1E /* Pods_Router_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Router_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +37,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				299BBD2B5C41C38931F156CB /* Pods_Router_Framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +54,6 @@
 				1795996F28900E16003BBBC1 /* Source */,
 				1795996528900D74003BBBC1 /* Products */,
 				FF262C7D64684585A531B595 /* Pods */,
-				B069B1AB1808A80C811A5945 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,19 +86,9 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		B069B1AB1808A80C811A5945 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B356203EDD8876021BC11B1E /* Pods_Router_Framework.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FF262C7D64684585A531B595 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				44589E6787AC5D1F9D5A707D /* Pods-Router_Framework.debug.xcconfig */,
-				79F4F8BECF98ED4C3AE7987A /* Pods-Router_Framework.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -127,7 +111,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1795996B28900D74003BBBC1 /* Build configuration list for PBXNativeTarget "Router_Framework" */;
 			buildPhases = (
-				C7E276AAFBC44D28ECDC2874 /* [CP] Check Pods Manifest.lock */,
 				1795995F28900D74003BBBC1 /* Headers */,
 				1795996028900D74003BBBC1 /* Sources */,
 				1795996128900D74003BBBC1 /* Frameworks */,
@@ -185,31 +168,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C7E276AAFBC44D28ECDC2874 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Router_Framework-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1795996028900D74003BBBC1 /* Sources */ = {
@@ -349,7 +307,6 @@
 		};
 		1795996C28900D74003BBBC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44589E6787AC5D1F9D5A707D /* Pods-Router_Framework.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -379,7 +336,6 @@
 		};
 		1795996D28900D74003BBBC1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79F4F8BECF98ED4C3AE7987A /* Pods-Router_Framework.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
