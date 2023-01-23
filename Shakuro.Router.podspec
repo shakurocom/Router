@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '11.0'
 
     s.dependency "Shakuro.ContainerViewController", "1.0.0"
-    s.dependency "Shakuro.CommonTypes", "1.1.2"
+    s.dependency "Shakuro.CommonTypes", "1.1.4"
 end
