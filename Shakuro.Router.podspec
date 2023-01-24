@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name             = 'Shakuro.Router'
-    s.version          = '1.0.1'
+    s.version          = '1.0.2'
     s.summary          = 'Router'
     s.homepage         = 'https://github.com/shakurocom/Router'
     s.license          = { :type => "MIT", :file => "LICENSE.md" }
@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '11.0'
 
     s.dependency "Shakuro.ContainerViewController", "1.0.0"
-    s.dependency "Shakuro.CommonTypes", "1.1.4"
+    s.dependency "Shakuro.CommonTypes", "~> 1.1"
 end
