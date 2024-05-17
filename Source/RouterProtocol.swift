@@ -23,6 +23,7 @@ public protocol RouterProtocol: AnyObject {
                                                   animated: Bool)
 
     func dismissViewController(_ controller: UIViewController, animated: Bool)
+    func dismissViewController(_ controller: UIViewController, animated: Bool, completion: (() -> Void)?)
 
 }
 

@@ -5,6 +5,9 @@ typealias RoutingSupport = RouterProtocol & RoutingAlertsProtocol & RoutingURLPr
 
 class ExampleRouter: Router {
     func setupRootViewController() {
-        presentViewController(controller: ExampleFirstViewController.instantiate(self), from: nil, style: .push(asRoot: true), animated: false)
+        presentViewController(controller: ExampleFirstViewController.instantiate(self),
+                              from: nil,
+                              style: .push(asRoot: true, transitionStyle: .defaultTransition),
+                              animated: false)
     }
 }

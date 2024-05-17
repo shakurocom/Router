@@ -7,12 +7,19 @@ import Shakuro_ContainerViewController
 
 /// The style of navigation to use to present view controller
 public enum NavigationStyle {
-    case push(asRoot: Bool)
+
+    public enum TransitionType {
+        case defaultTransition
+        case fade
+    }
+
+    case push(asRoot: Bool, transitionStyle: TransitionType)
     case modal(transitionStyle: UIModalTransitionStyle?, completion: (() -> Void)?)
     case container(transitionStyle: ContainerViewController.TransitionStyle)
     case splitDetail
+    case content(containerView: UIView, completion: (() -> Void)?)
 
-    public static let pushDefault: NavigationStyle = .push(asRoot: false)
+    public static let pushDefault: NavigationStyle = .push(asRoot: false, transitionStyle: .defaultTransition)
     public static let modalDefault: NavigationStyle = .modal(transitionStyle: nil, completion: nil)
     public static let modalCrossDissolve: NavigationStyle = .modal(transitionStyle: .crossDissolve, completion: nil)
 }
@@ -55,15 +62,35 @@ open class Router: RouterProtocol {
             return nil
         }
         switch style {
-        case .push(let asRoot):
+        case .push(let asRoot, let transitionType):
             let presentingController: UINavigationController = from?.navigationController ?? rootNavigationController
             if asRoot {
                 if presentingController === rootNavigationController {
                     rootViewController = controller
                 }
-                presentingController.setViewControllers([controller], animated: animated)
+                if animated {
+                    switch transitionType {
+                    case .defaultTransition:
+                        presentingController.setViewControllers([controller], animated: true)
+                    case .fade:
+                        presentingController.setViewControllers([controller], animated: false)
+                        presentingController.view.superview?.layer.addTransitionAnimation(type: .fade, duration: 0.3)
+                    }
+                } else {
+                    presentingController.setViewControllers([controller], animated: false)
+                }
             } else {
-                presentingController.pushViewController(controller, animated: animated)
+                if animated {
+                    switch transitionType {
+                    case .defaultTransition:
+                        presentingController.pushViewController(controller, animated: true)
+                    case .fade:
+                        presentingController.pushViewController(controller, animated: false)
+                        presentingController.view.superview?.layer.addTransitionAnimation(type: .fade, duration: 0.3)
+                    }
+                } else {
+                    presentingController.pushViewController(controller, animated: false)
+                }
             }
         case .modal(let transitionStyle, let completion):
             let presentingController: UIViewController = from ?? rootNavigationController
@@ -87,6 +114,31 @@ open class Router: RouterProtocol {
             } else {
                 assertionFailure("\(type(of: self)) - \(#function): splitViewController is nil")
             }
+        case .content(let containerView, let completion):
+            guard let parentVC = from else {
+                assertionFailure("\(type(of: self)) - \(#function): parent view controller (from) is nil.")
+                return nil
+            }
+            guard !(from is UINavigationController) else {
+                assertionFailure("\(type(of: self)) - \(#function): 'content' presentation style require 'from' to be not UINavigationController.")
+                return nil
+            }
+            let animations: ((UIView, UIView) -> Void)?
+            if animated {
+                controller.view.alpha = 0.0
+                animations = { (_, childView) in
+                    childView.alpha = 1.0
+                }
+            } else {
+                animations = nil
+            }
+            controller.view.frame = containerView.bounds
+            parentVC.addChildViewController(controller,
+                                            notifyAboutAppearanceTransition: true,
+                                            targetContainerView: containerView,
+                                            animationDuration: 0.1,
+                                            animations: animations,
+                                            completion: completion)
         }
         return controller
     }
@@ -121,17 +173,47 @@ open class Router: RouterProtocol {
     ///   - controller: The controller to dismiss
     ///   - animated: Set this value to true to animate the transition.
     public func dismissViewController(_ controller: UIViewController, animated: Bool = true) {
-        if let navController: UINavigationController = controller.navigationController, navController.viewControllers.count > 1 {
-            if navController.topViewController === controller {
-                navController.popViewController(animated: animated)
-            }
-        } else {
-            if let presentingController: UIViewController = controller.presentingViewController {
-                presentingController.dismiss(animated: animated, completion: nil)
-            } else {
-                assertionFailure("dismissViewController: attemt to dismiss not presented ViewController")
-            }
+        dismissViewController(controller, animated: animated, completion: nil)
+    }
+
+    /// Dismisses the view controller that was presented modally or via UINavigationController.
+    /// - Parameters:
+    ///   - controller: The controller to dismiss
+    ///   - animated: Set this value to true to animate the transition.
+    ///   - completion: Closure that executed after ciontroller has been dismissed
+    public func dismissViewController(_ controller: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        if let navigationController = controller.navigationController,
+           navigationController.viewControllers.count > 1,
+           navigationController.topViewController === controller {
+            CATransaction.begin()
+            CATransaction.setCompletionBlock(completion)
+            navigationController.popViewController(animated: animated)
+            CATransaction.commit()
+            return
         }
+        if let presentingController = controller.presentingViewController,
+           (controller.parent == nil || controller.parent == controller.navigationController) {
+            presentingController.dismiss(animated: animated, completion: completion)
+            return
+        }
+        if controller.parent != nil {
+            if animated {
+                UIView.animate(
+                    withDuration: 0.2,
+                    animations: {
+                        controller.view.alpha = 0.0
+                    },
+                    completion: { (_) in
+                        controller.removeFromParentViewController(notifyAboutAppearanceTransition: true)
+                        completion?()
+                    })
+            } else {
+                controller.removeFromParentViewController(notifyAboutAppearanceTransition: true)
+                completion?()
+            }
+            return
+        }
+        assertionFailure("dismissViewController: attemt to dismiss not presented ViewController")
     }
 
     /// Dismisses all view controller that were presented modally.
