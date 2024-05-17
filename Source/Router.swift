@@ -25,7 +25,7 @@ public enum NavigationStyle {
 }
 
 /// - Tag: Router
-open class Router: RouterProtocol {
+open class Router: NSObject, RouterProtocol {
 
     /// The root navigation controller
     public let rootNavigationController: UINavigationController
@@ -40,6 +40,7 @@ open class Router: RouterProtocol {
 
     public init(rootController: UINavigationController) {
         rootNavigationController = rootController
+        super.init()
     }
 
     // MARK: - General
