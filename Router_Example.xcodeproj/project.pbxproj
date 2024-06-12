@@ -16,6 +16,7 @@
 		179599A1289011D9003BBBC1 /* Router_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1795999F289011D9003BBBC1 /* Router_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		179599A62890183B003BBBC1 /* ExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179599A52890183B003BBBC1 /* ExampleRouter.swift */; };
 		179599A8289021FB003BBBC1 /* ExampleSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179599A7289021FB003BBBC1 /* ExampleSecondViewController.swift */; };
+		7ACEB0DD3F2C58B10FBF78A1 /* Pods_Router_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30681C4A3B3A421BF7EA6C73 /* Pods_Router_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,9 @@
 		1795999F289011D9003BBBC1 /* Router_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Router_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		179599A52890183B003BBBC1 /* ExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouter.swift; sourceTree = "<group>"; };
 		179599A7289021FB003BBBC1 /* ExampleSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleSecondViewController.swift; sourceTree = "<group>"; };
+		30681C4A3B3A421BF7EA6C73 /* Pods_Router_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Router_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91A7C6950372BEE847AD870 /* Pods-Router_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Router_Example.debug.xcconfig"; path = "Target Support Files/Pods-Router_Example/Pods-Router_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DFE844ECA2BEB256102E9B1E /* Pods-Router_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Router_Example.release.xcconfig"; path = "Target Support Files/Pods-Router_Example/Pods-Router_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				179599A0289011D9003BBBC1 /* Router_Framework.framework in Frameworks */,
+				7ACEB0DD3F2C58B10FBF78A1 /* Pods_Router_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +65,8 @@
 		0C8B006379F7AF623B6A9B7F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				C91A7C6950372BEE847AD870 /* Pods-Router_Example.debug.xcconfig */,
+				DFE844ECA2BEB256102E9B1E /* Pods-Router_Example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -101,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				1795999F289011D9003BBBC1 /* Router_Framework.framework */,
+				30681C4A3B3A421BF7EA6C73 /* Pods_Router_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,11 +120,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1795999B28900F72003BBBC1 /* Build configuration list for PBXNativeTarget "Router_Example" */;
 			buildPhases = (
+				2646228C559F7F6284E8CA67 /* [CP] Check Pods Manifest.lock */,
 				1795999E28900FCD003BBBC1 /* Swiftlint */,
 				1795998328900F71003BBBC1 /* Sources */,
 				1795998428900F71003BBBC1 /* Frameworks */,
 				1795998528900F71003BBBC1 /* Resources */,
 				179599A2289011D9003BBBC1 /* Embed Frameworks */,
+				4D9254CFB128A9D5807D57C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +201,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#debug log\nset -x\n\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		2646228C559F7F6284E8CA67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Router_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D9254CFB128A9D5807D57C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Router_Example/Pods-Router_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Router_Example/Pods-Router_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Router_Example/Pods-Router_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -344,6 +393,7 @@
 		};
 		1795999C28900F72003BBBC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C91A7C6950372BEE847AD870 /* Pods-Router_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -373,6 +423,7 @@
 		};
 		1795999D28900F72003BBBC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFE844ECA2BEB256102E9B1E /* Pods-Router_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

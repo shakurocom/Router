@@ -15,9 +15,11 @@
 		1795997928900E16003BBBC1 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1795997428900E16003BBBC1 /* RouterProtocol.swift */; };
 		1795997D28900EDE003BBBC1 /* Shakuro.Router.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 1795997C28900EDE003BBBC1 /* Shakuro.Router.podspec */; };
 		6B473CB528E71DDC0040D82B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6B473CB428E71DDC0040D82B /* .swiftlint.yml */; };
+		C43E6A937F2853685751CE8A /* Pods_Router_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEF4F962E1C342475BA1CFA /* Pods_Router_Framework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1048C6B2678519928638008E /* Pods-Router_Framework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Router_Framework.debug.xcconfig"; path = "Target Support Files/Pods-Router_Framework/Pods-Router_Framework.debug.xcconfig"; sourceTree = "<group>"; };
 		1795996428900D74003BBBC1 /* Router_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Router_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1795996728900D74003BBBC1 /* Router_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Router_Framework.h; sourceTree = "<group>"; };
 		1795996E28900DCC003BBBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		1795997B28900E61003BBBC1 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		1795997C28900EDE003BBBC1 /* Shakuro.Router.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Shakuro.Router.podspec; sourceTree = "<group>"; };
 		6B473CB428E71DDC0040D82B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D0F318C2BF9FA419C040FADB /* Pods-Router_Framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Router_Framework.release.xcconfig"; path = "Target Support Files/Pods-Router_Framework/Pods-Router_Framework.release.xcconfig"; sourceTree = "<group>"; };
+		EAEF4F962E1C342475BA1CFA /* Pods_Router_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Router_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,12 +41,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43E6A937F2853685751CE8A /* Pods_Router_Framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14B9D434C3C9C674E851B33E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAEF4F962E1C342475BA1CFA /* Pods_Router_Framework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1795995A28900D74003BBBC1 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +67,7 @@
 				1795996F28900E16003BBBC1 /* Source */,
 				1795996528900D74003BBBC1 /* Products */,
 				FF262C7D64684585A531B595 /* Pods */,
+				14B9D434C3C9C674E851B33E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +103,8 @@
 		FF262C7D64684585A531B595 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				1048C6B2678519928638008E /* Pods-Router_Framework.debug.xcconfig */,
+				D0F318C2BF9FA419C040FADB /* Pods-Router_Framework.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -111,6 +127,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1795996B28900D74003BBBC1 /* Build configuration list for PBXNativeTarget "Router_Framework" */;
 			buildPhases = (
+				0BB14D87895EE798D2F9816D /* [CP] Check Pods Manifest.lock */,
 				1795995F28900D74003BBBC1 /* Headers */,
 				1795996028900D74003BBBC1 /* Sources */,
 				1795996128900D74003BBBC1 /* Frameworks */,
@@ -168,6 +185,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BB14D87895EE798D2F9816D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Router_Framework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1795996028900D74003BBBC1 /* Sources */ = {
@@ -307,6 +349,7 @@
 		};
 		1795996C28900D74003BBBC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1048C6B2678519928638008E /* Pods-Router_Framework.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -336,6 +379,7 @@
 		};
 		1795996D28900D74003BBBC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0F318C2BF9FA419C040FADB /* Pods-Router_Framework.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
