@@ -3,7 +3,11 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import ContainerViewController
+#else
 import Shakuro_ContainerViewController
+#endif
 
 /// The style of navigation to use to present view controller
 public enum NavigationStyle {

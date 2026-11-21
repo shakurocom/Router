@@ -4,7 +4,11 @@
 
 import SafariServices
 import UIKit
+#if SWIFT_PACKAGE
+import CommonTypes
+#else
 import Shakuro_CommonTypes
+#endif
 
 /// Router public interface see [Router](x-source-tag://Router)
 public protocol RouterProtocol: AnyObject {

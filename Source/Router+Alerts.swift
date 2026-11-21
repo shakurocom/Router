@@ -3,7 +3,11 @@
 //
 
 import UIKit
+#if SWIFT_PACKAGE
+import CommonTypes
+#else
 import Shakuro_CommonTypes
+#endif
 
 // MARK: - Alerts
 
